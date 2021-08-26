@@ -1,150 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MiningMVDs:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_opencsv_opencsv_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_csv_1_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_28_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MiningMVDs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/PythonAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/UnitTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/BitSetMatrixGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/GraphUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Measure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/RelationSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Transversals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/DataDependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/DependencyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/FunctionalDependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/IDataDependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/JoinDependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/MultivaluedDependency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/DependencySet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/IAttributeSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/IDependencySet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/JDSetCommonLHS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/AbstractDataset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/CompressedDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/ExternalFileDataSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/IDataset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/InMemoryDataSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/MasterCompressedDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/SmallDBInMemory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/Utilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/inference/BeeriAlgorithmInference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/inference/DependencyBasis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/inference/IInferenceModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/inference/IInferenceModuleFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/inference/LatticeOrderingInference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/CandidateGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/ISearchAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/JDGeneratorGivenLHS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/TopDownInductiveSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uw/cs/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/PythonAPI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/UnitTests$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/UnitTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/BitSetMatrixGraph.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Constants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/GraphUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Measure.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Pair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/RelationSchema.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Status.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Transversals.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema$JTNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema$compatibilityStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema$sortBySepSize.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/DataDependency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/DependencyType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/FunctionalDependency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/IDataDependency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/JoinDependency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/dependency/MultivaluedDependency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/DependencySet$InternalIterator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/DependencySet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/IAttributeSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/IDependencySet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/JDSetCommonLHS.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/AbstractDataset$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/AbstractDataset.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/CompressedDB.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/Database.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/ExternalFileDataSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/IDataset.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/InMemoryDataSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/MasterCompressedDB.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$CanceledJobException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$ClustersConsumer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$DecompositionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$DecompositionRunStatus$StatusCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory$DecompositionRunStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/SmallDBInMemory$decompositionSize.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/SmallDBInMemory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/entropy/Utilities.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/BeeriAlgorithmInference$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/BeeriAlgorithmInference$Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/BeeriAlgorithmInference.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/DependencyBasis.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/IInferenceModule.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/IInferenceModuleFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/LatticeOrderingInference$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/inference/LatticeOrderingInference.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/CandidateGenerator$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/CandidateGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/ISearchAlgorithm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/JDGeneratorGivenLHS$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/JDGeneratorGivenLHS$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/JDGeneratorGivenLHS$AttributePair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/JDGeneratorGivenLHS.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator$AttributePair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator$MergedJD.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/TopDownInductiveSearch$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/TopDownInductiveSearch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/edu/uw/cs/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MiningMVDs_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +40,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="#USE_PROJECT_JDK" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1uiVXyx14Ap6grmlCl6KNtwbwFF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -170,29 +59,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.37473002" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.AcyclicSchemaEnumerator - bounds on RHO">
-    <configuration name="AcyclicSchemaEnumerator - bounds on RHO" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.AcyclicSchemaEnumerator - Single Dataset">
+    <configuration name="AcyclicSchemaEnumerator - Single Dataset" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.AcyclicSchemaEnumerator" />
       <module name="MiningMVDs" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\Outputs\Bounds on RHO - August 19 2021\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\Outputs\Bounds on RHO - August 19 2021\Schema&quot; 9 12960 1000 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\nursery.csv&quot;" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uwdb.discovery.dependency.approximate.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AcyclicSchemaEnumerator Cinema" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.AcyclicSchemaEnumerator" />
-      <module name="MiningMVDs" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Cinema Dataset (from slides)\Outputs\August 2021 - Exact J\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Cinema Dataset (from slides)\Outputs\August 2021 - Exact J\Schema&quot; 4 12 100 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Cinema Dataset (from slides)\CinemaCSV.csv&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Schema&quot; 5 625 100 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\balance-scale.csv&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,6 +90,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="uwdb.discovery.dependency.approximate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mine MVDs - Single Dataset" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.MinimalJDGenerator" />
+      <module name="MiningMVDs" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Chess\chess.csv&quot; 7 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Chess\Outputs\Bounds on RHO\Sep&quot; true" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uwdb.discovery.dependency.approximate.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -246,16 +139,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AcyclicSchemaEnumerator Cinema" />
+      <item itemvalue="Application.AcyclicSchemaEnumerator - Single Dataset" />
       <item itemvalue="Application.AcyclicSchemaEnumerator SINGLE SEP" />
-      <item itemvalue="Application.AcyclicSchemaEnumerator - bounds on RHO" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Mine MVDs - Single Dataset" />
       <item itemvalue="Application.MiningMinMVDsUnitTests" />
       <item itemvalue="Application.PythonAPI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AcyclicSchemaEnumerator - bounds on RHO" />
+        <item itemvalue="Application.Mine MVDs - Single Dataset" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MiningMinMVDsUnitTests" />
         <item itemvalue="Application.PythonAPI" />
@@ -281,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629219358370</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report">
+      <created>1629632409173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629632409173</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,13 +230,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java</url>
-          <line>247</line>
-          <option name="timeStamp" value="13" />
+          <line>306</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java</url>
-          <line>305</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java</url>
+          <line>1047</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java</url>
+          <line>355</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+import uwdb.discovery.dependency.approximate.common.Constants;
 import uwdb.discovery.dependency.approximate.common.sets.AttributeSet;
 import uwdb.discovery.dependency.approximate.common.sets.IAttributeSet;
 import uwdb.discovery.dependency.approximate.entropy.MasterCompressedDB;
@@ -225,51 +226,6 @@ public class AcyclicSchema {
 		Q.add(root);
 		IAttributeSet processedSeparators = new AttributeSet(separators.size());
 
-		/*
-		while(!Q.isEmpty()) {
-			JTNode currComponent = Q.poll();
-			boolean componentSeparated = false; //default: unable to separate components
-
-			//try to apply any one of the separators
-			for(int i = 0 ; i < separators.size() && !componentSeparated; i++) {
-				//already processed this separator
-				if(processedSeparators.contains(i))
-					continue;
-
-				JoinDependency iSep = separators.get(i);
-				if(currComponent.members.contains(iSep.getlhs())) {
-					//turn the leaf-component node to a separator node
-					JTNode separatorNode = new JTNode(iSep.getlhs());
-					separatorNode.setParent(currComponent.parent);
-					if(separatorNode.parent == null) {
-						root = separatorNode;				//only occurs for the first node
-					} else {
-						separatorNode.parent.addChild(separatorNode);		//otherwise set parent-child relationship
-						separatorNode.parent.removeChild(currComponent);
-					}
-
-					//set children for current separator node
-					for(IAttributeSet JDComponent : iSep.getComponents()) {
-						IAttributeSet newComponent = JDComponent.clone();
-						newComponent.or(iSep.getlhs());
-						newComponent.intersectNonConst(currComponent.members);
-						if(newComponent.cardinality() > iSep.getlhs().cardinality()) {
-							JTNode componentNode = new JTNode(newComponent);
-							separatorNode.addChild(componentNode);
-							//OR: forgot to add parent?
-							componentNode.setParent(separatorNode);
-							Q.add(componentNode);
-						}
-					}					
-					componentSeparated = true;
-					processedSeparators.add(i);
-				}
-			}
-			if(!componentSeparated)
-				P.add(currComponent.members);
-		}
-		*/
-
 		boolean treeEmpty = true;
 		IAttributeSet finishedAttributes = new AttributeSet(numAtts);
 
@@ -310,7 +266,8 @@ public class AcyclicSchema {
 
 
 						if(newComponent.cardinality() > iSep.getlhs().cardinality()) {	//OR: not sure if this IF is necessary
-							/*in order to maintain RIP property, add component to separator IF:
+							/*
+								in order to maintain RIP property, add component to separator IF:
 								1. the previous cluster contains the JD component
 								2. the new separator DOESN'T contain the JD component
 							 */
@@ -334,6 +291,10 @@ public class AcyclicSchema {
 					}
 					componentSeparated = true;
 					processedSeparators.add(i);
+
+					//remove new separator if it failed to assign children
+					if(newSeparator.numChildren == 0)
+						current.removeChild(newSeparator);
 				}
 			}
 			if(!componentSeparated)
@@ -427,16 +388,8 @@ public class AcyclicSchema {
 
 		retVal = Hbags - Hseps - Hrel;
 
-
-		//use this block to debug inside AcyclicSchema module
-		/*
-		if(estimatedMeasure < retVal) {
-			System.out.println("-W- Estimated measure is less than exact measure");
-		}
-		if(retVal < 0) {
-			System.out.println("-W- Exact measure is negative");
-		}
-		*/
+		if (retVal < Constants.J_THRESH)
+			retVal = 0;
 
 		return retVal;
 	}

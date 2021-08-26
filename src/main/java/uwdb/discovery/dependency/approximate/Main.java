@@ -1,4 +1,5 @@
 package uwdb.discovery.dependency.approximate;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -306,13 +307,13 @@ public class Main {
 		String 	csvPath = "C:\\Users\\orgla\\Desktop\\Study\\J Divergence ST formulation\\Datasets\\Nursery\\nursery.csv";
 		String  outDir  = "C:\\Users\\orgla\\Desktop\\Study\\J Divergence ST formulation\\Outputs\\Nursery";
 
-		Integer numAtts 		= 9;				//Nursery dataset
+		int numAtts 		= 9;				//Nursery dataset
 		int[] 	range   		= {4};				//fast H calculation
 		double  thresholds[] 	= getThresholds();
 		long[]  timeout 		= {1000};
 		boolean	mineFullMVDs 	= true;
 
-		MinimalJDGenerator.executeTestsSingleDataset(csvPath, numAtts, range, thresholds, outDir, timeout, mineFullMVDs);
+		MinimalJDGenerator.executeTestsSingleDataset(csvPath, outDir, numAtts, thresholds, range, timeout, mineFullMVDs);
 
 
 	}

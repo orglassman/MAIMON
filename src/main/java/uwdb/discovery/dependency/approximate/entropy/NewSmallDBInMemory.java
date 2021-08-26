@@ -45,7 +45,7 @@ public class NewSmallDBInMemory implements AutoCloseable {
     // Parallelism
     static final int TUPLES_ADD_AT_A_TIME = 1000;
 
-    // Differentiate different databasee
+    // Differentiate different database
     static final AtomicInteger DB_IDX = new AtomicInteger();
 
     // Universal main table name

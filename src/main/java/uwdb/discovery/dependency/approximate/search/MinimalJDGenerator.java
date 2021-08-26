@@ -14,6 +14,7 @@ import uwdb.discovery.dependency.approximate.common.sets.IAttributeSet;
 import uwdb.discovery.dependency.approximate.entropy.AbstractDataset;
 import uwdb.discovery.dependency.approximate.entropy.ExternalFileDataSet;
 import uwdb.discovery.dependency.approximate.entropy.MasterCompressedDB;
+import uwdb.discovery.dependency.approximate.common.Constants;
 
 import java.io.*;
 import java.nio.file.*;
@@ -864,17 +865,7 @@ public class MinimalJDGenerator {
     	
     	
     }
-    
-    /*
-    public void getJDsFromMinSeps(int limit) {
-    	for(IAttributeSet separator : minedMinSeps) {
-    		Set<JoinDependency> sepJDs = mineAllJDsWithLHS(separator, limit);
-    		if(sepJDs != null) {
-    			MinedJDsFromMinSeps.addAll(sepJDs);
-    		}
-    	}    	
-    }*/
-    
+
     private static int LIMIT_JDS=10;
     public static MinimalJDGenerator executeTest(String dataSetPath, int numAttribtues, 
     		int rangeSize, double threshold, boolean mineAllFullMVDs) {    	
@@ -906,9 +897,8 @@ public class MinimalJDGenerator {
         return miner;
     }
     
-    public static void executeTestsSingleDataset(String dataSetPath, 
-    		int numAttribtues, int[] rangeSizes, double[] thresholds, 
-    		String outputDirPath, long[] timeouts, boolean mineAllFullMVDs) {
+    public static void executeTestsSingleDataset(String dataSetPath,
+		String outputDirPath, int numAttribtues, double[] thresholds,  int[] rangeSizes, long[] timeouts, boolean mineAllFullMVDs) {
     	//timeoutInSec
     	
     	Path inputPath = Paths.get(dataSetPath);
@@ -1051,47 +1041,64 @@ public class MinimalJDGenerator {
 		}       
 
     }
-    
+
+    //for single input file, mine all MVDs. hardcoded parameters
     public static void main(String[] args) {
-    	
-    //	testMinSeps2(args[0],Integer.parseInt(args[1]),0.4);
-    	
-    	String inDirectory = args[0];
-    	String outDir = args[1];
-    	String[] thresholds =  args[2].split(",");
-    	double[] dblThresholds = new double[thresholds.length];
-    	for(int i=0 ; i < thresholds.length ; i++) {
-    		dblThresholds[i] = Double.valueOf(thresholds[i]);
+
+    	String inFile = args[0];
+		int numAtts = Integer.parseInt(args[1]);
+		String outDir = args[2];
+
+		boolean mineFullMVDs = false;
+		if(args.length > 3) {
+			if(!args[3].isEmpty()) {
+				mineFullMVDs = true;
+			}
+		}
+
+		double[] thresholds = {0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.2,1.5,1.6,2.0,3};
+    	int[] ranges  = {2, 4, 8};
+    	long[] timeouts = {1000, 2000};
+
+    	/*
+
+    	String[] thresholdStr =  args[2].split(",");
+    	double[] thresholds = new double[thresholdStr.length];
+    	for (int i = 0; i < thresholdStr.length; i++) {
+			thresholds[i] = Double.valueOf(thresholdStr[i]);
     	}
-    	String[] ranges =  args[3].split(",");    	
+    	String[] rangeStr =  args[3].split(",");
     	int[] intRanges = new int[ranges.length];
-    	for(int i=0 ; i < ranges.length ; i++) {
-    		intRanges[i] = Integer.valueOf(ranges[i]);
+    	for(int i = 0; i < ranges.length; i++) {
+    		intRanges[i] = Integer.valueOf(rangeStr[i]);
     	}
-    	String[] timeouts =  args[4].split(",");
-    	long[] dblTimeout = new long[timeouts.length];
-    	for(int i=0 ; i < timeouts.length ; i++) {
-    		dblTimeout[i] = Long.valueOf(timeouts[i]);
+    	String[] timeoutStr =  args[3].split(",");
+    	long[] timeouts = new long[timeoutStr.length];
+    	for(int i = 0; i < timeoutStr.length; i++) {
+    		timeouts[i] = Long.valueOf(timeoutStr[i]);
     	}
-    	
-    	Integer range = new Integer(args[3]);
-    	Long timeout = new Long(args[4]);
-    	
-    	boolean mineFullMVDs=false; 
-    	if(args.length > 5){
-    		if(!args[5].isEmpty()) {
-    			mineFullMVDs = Boolean.valueOf(args[5]);    			
-    		}
-    	}
+
+    	 */
+
+		System.out.println(Constants.SPACER);
+    	System.out.println("-I- Executing single test");
+    	System.out.println("-I- Input file:           " + inFile);
+    	System.out.println("-I- Output directory:     " + outDir);
+    	System.out.println("-I- Number of attributes: " + numAtts);
+    	System.out.println("-I- Thresholds:           " + thresholds.toString());
+    	System.out.println("-I- Ranges:               " + ranges.toString());
+    	System.out.println("-I- Timeout:              " + timeouts.toString());
+    	System.out.println("-I- Mine full MVDs:       " + mineFullMVDs);
+
+
+		executeTestsSingleDataset(inFile, outDir, numAtts, thresholds, ranges, timeouts, mineFullMVDs);
+
+		System.out.println(Constants.SPACER);
+		System.out.println("-I- Main flow finished successfully");
+
+    	/*
     	File inDir = new File(inDirectory);    	
-       /* double[] thresholds = new double[] {0,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,
-        		0.55,0.6,0.65,0.7,0.75,0.8,0.9,1.0,1.1,1.15,1.3,1.4,1.5,1.6,2.0,2.5,3,24};
-        */
-//        double[] thresholds = new double[] {0.0,0.001,0.005,0.01,0.015,0.02,0.05,0.1};
-    // 	double[] thresholds = new double[] {1.0,2.0,3.0,24};
-   //     long[] timeouts = new long[] {1800,3600,7200,14400};
-       // long[] timeouts = new long[] {5,10,15,20,30};
-      //  long[] timeouts = new long[] {60, 300, 500, 1500};
+        long[] timeouts = new long[] {60, 300, 500, 1500};
         
     	File[] inFiles = inDir.listFiles();
     	Arrays.sort(inFiles, new Comparator<File>(){
@@ -1105,6 +1112,10 @@ public class MinimalJDGenerator {
             executeTestsSingleDataset(inFile.getAbsolutePath(), 
     		numAttributes, intRanges, dblThresholds,outDir, dblTimeout,mineFullMVDs);        	
         }
+		*/
+
+
+
 
     }
     

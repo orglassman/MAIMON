@@ -2,6 +2,7 @@ package uwdb.discovery.dependency.approximate.search;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
+
 import uwdb.discovery.dependency.approximate.common.BitSetMatrixGraph;
 import uwdb.discovery.dependency.approximate.common.dependency.AcyclicSchema;
 import uwdb.discovery.dependency.approximate.common.dependency.JoinDependency;
@@ -213,13 +214,14 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 	public static void main(String[] args) {
 		String pathToSepDirectory = args[0];
 		String outputDirPath = args[1];
-		int numAtts = Integer.valueOf(args[2]);
-		int numRows = Integer.valueOf(args[3]);
-		long timeout = Long.valueOf(args[4]) * 1000;
+		int numAtts = Integer.parseInt(args[2]);
+		int numRows = Integer.parseInt(args[3]);
+		long timeout = Long.parseLong(args[4]) * 1000;
 		String dataFilePath = args[5];
 
 		File sepFileDir = new File(pathToSepDirectory);
 		File[] sepFiles = sepFileDir.listFiles();
+		if (sepFiles == null) throw new AssertionError();
 		Arrays.sort(sepFiles, new Comparator<File>() {
 			public int compare(File f1, File f2) {
 				Path pathObjTof1 = Paths.get(f1.getPath());
@@ -241,7 +243,7 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 							CSVFormat.DEFAULT.withHeader("#Attribtues", "#Rows", "Estimated J Measure", "Exact J Measure",
 									"Separator Size", "Elapsed Time (sec)", "#Schemas Returned",
 									"Largest Relation", "#Relations", "#Spurious Tuples",
-									"DecompositionSizeinTuples", "DecompositionSizeInCells", "RHO", "LOG ( RHO )", "LOWER BOUND", "UPPER BOUND"));
+									"DecompositionSizeinTuples", "DecompositionSizeInCells", "RHO (%)", "LOG(1+RHO)", "LOWER", "UPPER"));
 
 					//OR JULY 2021: Create MCDB object to easily calculate entropies
 					//mcDB object only depends on dataset file, so one object is initiated for ALL SEP files
@@ -312,7 +314,8 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 			double minSchemaMeasure = 0;
 			double maxSchemaMeasure = Double.MAX_VALUE;
 			int totalNumJDsInAllSchemas = 0;
-			// information for saving schemas
+
+			//information for saving schemas
 			int maxNumClusters = 0;
 			long minMaxClusterSize = Long.MAX_VALUE;
 			long minMaxSeparator = Long.MAX_VALUE;
@@ -349,7 +352,7 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 				schemasReturned++;
 
 				//OR: debug
-				if (schemasReturned == 16) {
+				if (schemasReturned == 2) {
 					int x = 6;
 				}
 
@@ -394,15 +397,15 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 
 				//print info
 				System.out.println("-I- Printing schema " + schemasReturned);
-				System.out.println("-I- File path " + pathToSepFile);
+				System.out.println("-I- File path: " + pathToSepFile);
 				System.out.println(AS.toString());
-				System.out.println("-I- Est. J Measure: " + ASMeasure);
-				System.out.println("-I- Exac J Measure: " + exactMeasure);
-				System.out.println("-I- Delta is: " + delta);
-				System.out.println("-I- Number of JDs: " + AS.getNumJDs());
-				System.out.println("-I- Number of clusters: " + AS.numClusters());
-				System.out.println("-I- Max cluster size: " + AS.getMaxCluster());
-				System.out.println("-I- Max separator size: " + AS.getMaxSeparator());
+				System.out.println("-I- Est. J Measure: 					" + ASMeasure);
+				System.out.println("-I- Exac J Measure: 					" + exactMeasure);
+				System.out.println("-I- Delta is: 							" + delta);
+				System.out.println("-I- Number of JDs: 						" + AS.getNumJDs());
+				System.out.println("-I- Number of clusters: 				" + AS.numClusters());
+				System.out.println("-I- Max cluster size: 					" + AS.getMaxCluster());
+				System.out.println("-I- Max separator size: 				" + AS.getMaxSeparator());
 
 
 				long currSpurious = 0;
@@ -411,11 +414,15 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 				long largestRelation = 0;
 
 				//OR August 2021
-				double rho = 0;
-				double rhoPrime = 0;
-				double logRho = 0;
-				double lower = 0;
-				double upper = 0;
+				double rho 				= 0;
+				double rhoPercentage 	= 0;
+				double rhoPrime 		= 0;			//rho' = 1 + rho
+				double logRhoPrime 		= 0;
+				double lower 			= 0;
+				double upper 			= 0;
+				double lowerPercentage  = 0;			//simply multiply by 100, for easier plotting later on
+				double upperPercentage  = 0;
+
 
 				if (testForSpuriousTuples) {
 					Set<IAttributeSet> seps = new HashSet<IAttributeSet>();
@@ -444,36 +451,38 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 					maxSizeCells 				= Math.max(dInfo.totalCellsInDecomposition, maxSizeCells);
 					minSizeCells 				= Math.min(dInfo.totalCellsInDecomposition, minSizeCells);
 
-					//rhoPrime = 1 + rho, and it is > 1
-					rho = 100*((double)currSpurious/(double)numRows);
-					rhoPrime = 1 + rho/100;	//rho >= 1
-					logRho = log2(rhoPrime);
+
+					rho = (double)currSpurious/(double)numRows;
+					rhoPercentage = 100 * rho;
+					rhoPrime = 1 + rho;
+					logRhoPrime = log2(rhoPrime);
 
 
 					System.out.println("");
 					System.out.println("-I- Data-intensive measurements:");
-					System.out.println("-I- Number of spurious tuples: " + currSpurious + ", total percentage " + rho);
-					System.out.println("-I- RHO PRIME is: " + rhoPrime);
-					System.out.println("-I- LOG (RHO PRIME) is: " + logRho);
-					System.out.println("-I- Largest relation: " + dInfo.largestRelation);
-					System.out.println("-I- Total tuples in decomposition : " + dInfo.totalTuplesInDecomposition);
-					System.out.println("-I- Total cells in decomposition : " + dInfo.totalCellsInDecomposition);
+					System.out.println("-I- Number of spurious tuples: 			" + currSpurious + ", total percentage " + rhoPercentage);
+					System.out.println("-I- RHO PRIME (1 + RHO) is: 			" + rhoPrime);
+					System.out.println("-I- LOG (1 + RHO) is: 					" + logRhoPrime);
+					System.out.println("-I- Largest relation: 					" + dInfo.largestRelation);
+					System.out.println("-I- Total tuples in decomposition:  	" + dInfo.totalTuplesInDecomposition);
+					System.out.println("-I- Total cells in decomposition: 		" + dInfo.totalCellsInDecomposition);
 					System.out.println("");
 
 					//Aug 19 2021: test for bounds on RHO = ST/N
 					lower = Math.pow(2, exactMeasure) - 1;
 					upper = 1/(1-Math.sqrt(exactMeasure/2)) - 1;
-					rho /= 100;
+					lowerPercentage = lower * 100;
+					upperPercentage = upper * 100;
 
-					System.out.println("-I- RHO (percentage): " + rho);
-					System.out.println("-I- Upper: " + upper);
-					System.out.println("-I- Lower: " + lower);
+
+					System.out.println("-I- RHO (percentage):   				" + rhoPercentage);
+					System.out.println("-I- RHO:              					" + rho);
+					System.out.println("-I- Upper: 			  					" + upper);
+					System.out.println("-I- Lower: 			  					" + lower);
 					if ((rho < upper) && (rho > lower))
 						System.out.println("-I- RHO within bounds");
 					else
 						System.out.println("-W- RHO out of bounds");
-
-
 
 					System.out.println("-I- Finished printing schema " + schemasReturned);
 					System.out.println(Constants.SPACER);
@@ -482,7 +491,7 @@ public class AcyclicSchemaEnumerator implements Iterator<AcyclicSchema> {
 				//print CSV entry
 				csvPrinter.printRecord(numAtts, numRows, ASMeasure, exactMeasure, AS.getMaxSeparator(),
 						timeElapsed, schemasReturned, largestRelation, AS.numClusters(),
-						currSpurious, DecompositionSizeinTuples, DecompositionSizeInCells, rho, logRho, lower, upper);
+						currSpurious, DecompositionSizeinTuples, DecompositionSizeInCells, rhoPercentage, logRhoPrime, lowerPercentage, upperPercentage);
 				csvPrinter.flush();
 			}
 

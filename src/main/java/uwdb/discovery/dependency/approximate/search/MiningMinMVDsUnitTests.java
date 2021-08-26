@@ -3,8 +3,7 @@ package uwdb.discovery.dependency.approximate.search;
 public class MiningMinMVDsUnitTests {
 	
 	public static void main(String[] args) {
-		double[] thresholds = new double[] {0,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,
-     		0.55,0.6,0.65,0.7,0.75,0.8,0.9,1.0,1.1,1.15,1.3,1.4,1.5,1.6,2.0,2.5,3,24};
+		double[] thresholds = new double[] {0,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.9,1.0,1.1,1.15,1.3,1.4,1.5,1.6,2.0,3};
 		//unit test on small, simple DBs
 		String balance = "C:\\Users\\orgla\\Desktop\\Study\\J Divergence ST formulation\\Datasets\\Balance-Scale\\balance-scale.csv";
 		Integer balanceNumAtts=5;
