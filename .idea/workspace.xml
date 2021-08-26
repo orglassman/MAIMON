@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" root0="SKIP_HIGHLIGHTING" />
@@ -182,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629997679715</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="squash! Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
+      <created>1629998093050</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629998093050</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +202,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -215,7 +221,8 @@
     </ignored-roots>
     <MESSAGE value="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report" />
     <MESSAGE value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
+    <MESSAGE value="squash! Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="squash! Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
