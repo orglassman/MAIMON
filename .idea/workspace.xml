@@ -9,21 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MiningMVDs_jar.xml" afterDir="false" />
+    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/dependency/AcyclicSchema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/entropy/NewSmallDBInMemory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MiningMinMVDsUnitTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,8 +128,8 @@
     <list>
       <item itemvalue="Application.AcyclicSchemaEnumerator - Single Dataset" />
       <item itemvalue="Application.AcyclicSchemaEnumerator SINGLE SEP" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Mine MVDs - Single Dataset" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.MiningMinMVDsUnitTests" />
       <item itemvalue="Application.PythonAPI" />
     </list>
@@ -181,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629632409173</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
+      <created>1629997201791</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629997201791</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
+      <created>1629997679715</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629997679715</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,7 +214,8 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report" />
+    <MESSAGE value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

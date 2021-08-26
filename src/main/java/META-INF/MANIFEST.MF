@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: uwdb.discovery.dependency.approximate.search.AcyclicSchemaEn
- umerator
-
