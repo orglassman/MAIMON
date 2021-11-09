@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="MiningMVDs:jar" />
+      <artifact name="MiningMVDsGraph:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="" />
+    <list default="true" id="c4155fff-a7b4-4462-9c3a-371233206125" name="Default Changelist" comment="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MiningMVDsGraph_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SchemaEnumerator_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/AttributeGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/AttributePair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/GraphBuilderNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MiningMVDs_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MiningMVDs_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/common/sets/AttributeSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/CandidateGenerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/CandidateGenerator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +42,8 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/GraphBuilderNew.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -46,18 +62,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Datasets/Balance-Scale/Outputs/Triangulation November 2021/Graph" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.37473002" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
-  <component name="RunManager" selected="Application.AcyclicSchemaEnumerator - Single Dataset">
+  <component name="RunManager" selected="Application.GraphBuilderNew">
     <configuration name="AcyclicSchemaEnumerator - Single Dataset" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.AcyclicSchemaEnumerator" />
       <module name="MiningMVDs" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Schema&quot; 5 625 100 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Balance-Scale\balance-scale.csv&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Balance-Scale\Outputs\Bounds on RHO\Schema&quot; 5 625 100 &quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Balance-Scale\balance-scale.csv&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,6 +82,21 @@
       <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.AcyclicSchemaEnumerator" />
       <module name="MiningMVDs" />
       <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\Outputs\Tree_Traversal Iteration 1 (single SEP)\Sep&quot; &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\Outputs\Tree_Traversal Iteration 1 (single SEP)\Schema&quot; 9 12960 100 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Nursery\nursery.csv&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphBuilderNew" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.GraphBuilderNew" />
+      <module name="MiningMVDs" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Balance-Scale\balance-scale.csv&quot; 9 &quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Balance-Scale\Outputs\Triangulation November 2021\Graph&quot; 1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Datasets/Balance-Scale/Outputs/Triangulation November 2021/Graph" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uwdb.discovery.dependency.approximate.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,7 +117,7 @@
     <configuration name="Mine MVDs - Single Dataset" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="uwdb.discovery.dependency.approximate.search.MinimalJDGenerator" />
       <module name="MiningMVDs" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Chess\chess.csv&quot; 7 &quot;C:\Users\orgla\Desktop\Study\J Divergence ST formulation\Datasets\Chess\Outputs\Bounds on RHO\Sep&quot; true" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Nursery\nursery.csv&quot; 9 &quot;C:\Users\orgla\Desktop\Study\J_Divergence_ST_formulation\Datasets\Nursery\Outputs\Graph Triangulation October 2021\Test 4\Classic 0.1&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="uwdb.discovery.dependency.approximate.search.*" />
@@ -131,9 +162,11 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.MiningMinMVDsUnitTests" />
       <item itemvalue="Application.PythonAPI" />
+      <item itemvalue="Application.GraphBuilderNew" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GraphBuilderNew" />
         <item itemvalue="Application.Mine MVDs - Single Dataset" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MiningMinMVDsUnitTests" />
@@ -188,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629998093050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir">
+      <created>1629998422820</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629998422820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,9 +260,9 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Acyclic schema: modify tree construction, added exact J measure calculation, added metrics to report" />
-    <MESSAGE value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
     <MESSAGE value="squash! Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
-    <option name="LAST_COMMIT_MESSAGE" value="squash! Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
+    <MESSAGE value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change MVD mining &amp; schema enumeration to accept single file &amp; output dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -243,14 +283,19 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java</url>
-          <line>1047</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/AcyclicSchemaEnumerator.java</url>
           <line>355</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/MinimalJDGenerator.java</url>
+          <line>627</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uwdb/discovery/dependency/approximate/search/GraphBuilderNew.java</url>
+          <line>647</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -8,4 +8,5 @@ public final class Constants {
     //round low values to zero
     public static final double DELTA_THRESH = 1e-12;
     public static final double J_THRESH = 1e-12;
+    public static final double JDMIN_J_THRESH = 0.0001;
 }

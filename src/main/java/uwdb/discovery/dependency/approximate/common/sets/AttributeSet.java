@@ -18,14 +18,6 @@ public class AttributeSet implements IAttributeSet {
 		cloneTime = 0;
 	}
 
-	public double toDouble() {
-		double retVal = 0;
-		for (int i = 0; i < length(); i++) {
-			retVal += (set.get(i)) ? Math.pow(2, i) : 0;
-		}
-		return retVal;
-	}
-
 	public AttributeSet(int numAttributes) {
 		this.numAttributes = numAttributes;
 		this.set = new BitSet(numAttributes);
@@ -142,31 +134,14 @@ public class AttributeSet implements IAttributeSet {
 
 	@Override
 	public int hashCode() {
-		// byte[] setByteArr = set.toByteArray();
-		// int retVal = Arrays.hashCode(setByteArr);
-		// return retVal;
 		return set.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// AttributeSet other = (AttributeSet) obj;
-		// if(other.cardinality() != this.cardinality())
-		// return false;
-		//
-		// for (int i = nextAttribute(0), j = other.nextAttribute(0);
-		// ((i != -1) || (j != -1));
-		// j = other.nextAttribute(i+1), i = nextAttribute(i+1)) {
-		// if(i != j)
-		// {
-		// return false;
-		// }
-		// }
-		// return true;
-
 		if (obj instanceof AttributeSet) {
 			AttributeSet o = (AttributeSet) obj;
-			return o.numAttributes == o.numAttributes && this.set.equals(o.set);
+			return this.set.equals(o.set);
 		}
 		return false;
 	}

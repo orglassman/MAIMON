@@ -628,25 +628,26 @@ public class MinimalJDGenerator {
     	IAttributeSet AS = new AttributeSet(this.numAttribtues);
     	AS.add(0, numAttribtues);
     	IAttributeSet startingPoint;
-    	for(int i=0 ; i < numAttribtues && !STOP; i++) {
+    	for (int i = 0 ; i < numAttribtues && !STOP; i++) {
     		AS.remove(i);
-    		for(int j=i+1 ; j < numAttribtues && !STOP ; j++) {
+    		for (int j = i + 1 ; j < numAttribtues && !STOP ; j++) {
     			AttributePair XY = new AttributePair(i, j);
-				if(minPairwiseSeps.containsKey(XY)) {					
+				if (minPairwiseSeps.containsKey(XY)) {
 					continue; //already have some initial minimal separator
-				}			
+				}
+
 				AS.remove(j);
 		   		double imeasure = calculateElementalMVD(i,j,AS);	    			
-		   		if(isGreaterThanEpsilon(imeasure,this.epsilon)) {
+		   		if(isGreaterThanEpsilon(imeasure, this.epsilon)) {
 		   			AS.add(j);
 		   			continue;    			
-		   		}			
+		   		}
+
 		   		startingPoint = AS;
-		
-				
+
     			HashSet<IAttributeSet> XYMinSps = new HashSet<IAttributeSet>();        			
 				JoinDependency JD = reduceToMinJDReturnJD(i, j, startingPoint);
-				if(JD == null) {
+				if (JD == null) {
 					AS.add(j);
     				continue;   
 				}				
@@ -656,7 +657,8 @@ public class MinimalJDGenerator {
 			//	updateStartingPoints(JD, startingPoints);
 				minedMinSeps.add(JD.getlhs()); 
 				MinedJDsFromMinSeps.add(JD);
-    			AS.add(j);
+
+				AS.add(j);
     		}
     		AS.add(i);
     	}
@@ -904,10 +906,8 @@ public class MinimalJDGenerator {
     	Path inputPath = Paths.get(dataSetPath);
     	String inputFilename = inputPath.getFileName().toString();
     	String outputFileName = inputFilename+".out.csv";
-    	Path outputPath= Paths.get(outputDirPath, outputFileName);    	
-    	
-    	
-    	
+    	Path outputPath = Paths.get(outputDirPath, outputFileName);
+
     	System.out.println("Executing tests of " + dataSetPath + "with " + 
     	numAttribtues + " attributes, with runWithTimeout!");
     	
@@ -1045,20 +1045,28 @@ public class MinimalJDGenerator {
     //for single input file, mine all MVDs. hardcoded parameters
     public static void main(String[] args) {
 
+
+
     	String inFile = args[0];
 		int numAtts = Integer.parseInt(args[1]);
 		String outDir = args[2];
 
 		boolean mineFullMVDs = false;
+		/*
 		if(args.length > 3) {
+
 			if(!args[3].isEmpty()) {
 				mineFullMVDs = true;
 			}
 		}
+		 */
 
-		double[] thresholds = {0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.2,1.5,1.6,2.0,3};
-    	int[] ranges  = {2, 4, 8};
-    	long[] timeouts = {1000, 2000};
+
+
+
+		double[] thresholds = {0.1};
+    	int[] ranges  = {2};
+    	long[] timeouts = {1000};
 
     	/*
 
